@@ -2,14 +2,11 @@ const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
+    productName: String,
+    category: String,
+    ecoScore: Number,
+    sustainabilityLevel: String,
+    summary: String,
   },
   { timestamps: true },
 );
