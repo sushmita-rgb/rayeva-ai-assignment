@@ -345,6 +345,16 @@ Proposed capabilities:
 
 ### AI Analysis Result
 ![AI Result](screenshots/result.png)
+# Live Demo
+
+Frontend Demo Video  
+https://drive.google.com/file/d/1kRnGGCTP0ioI0gVaiP0qIQholEAXMjPV/view
+
+The demo video shows:
+
+• Product input  
+• AI analysis process  
+• Structured sustainability results
 
 ## Author
 
