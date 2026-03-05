@@ -338,7 +338,13 @@ Proposed capabilities:
 - Build a dashboard for product insights
 
 ---
+# Project Screenshots
 
+### Product Input UI
+![Product Input](screenshots/ui.png)
+
+### AI Analysis Result
+![AI Result](screenshots/result.png)
 
 ## Author
 
