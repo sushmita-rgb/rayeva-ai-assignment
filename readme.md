@@ -1,12 +1,14 @@
-# Rayeva AI Product Analysis System
+# Rayeva AI Eco Product Analysis Platform
 
-An AI-powered backend API built using **Node.js, Express, and MongoDB** that analyzes product descriptions and generates structured sustainability insights.
+An AI-powered full stack application that analyzes product descriptions and generates structured sustainability insights.
 
 This project was developed as part of the **Rayeva – AI Systems Assignment** to demonstrate the integration of AI-driven analysis with real business logic for sustainable commerce platforms.
 
+The platform allows users to input product information through a React interface and receive AI-generated sustainability insights powered by a Node.js backend.
+
 ---
 
-# Objective
+## Objective
 
 The goal of this project is to automate product intelligence using AI by:
 
@@ -16,21 +18,28 @@ The goal of this project is to automate product intelligence using AI by:
 - Producing structured JSON outputs
 - Storing analyzed product data in a database
 
-This helps reduce manual catalog effort and improve sustainable product management.
+This helps reduce manual catalog effort and improves sustainable product management for eco-commerce platforms.
 
 ---
 
-# Tech Stack
+## Tech Stack
 
+### Backend
 - Node.js
 - Express.js
 - MongoDB (Mongoose)
 - OpenAI API (or simulated AI logic)
 - dotenv
 
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- JavaScript
+- Fetch API
+
 ---
 
-# Features
+## Features
 
 - AI-powered product analysis
 - Automatic category and sub-category generation
@@ -41,25 +50,33 @@ This helps reduce manual catalog effort and improve sustainable product manageme
 - MongoDB database storage
 - RESTful API architecture
 - Secure environment variable handling
+- Clean and responsive UI built with React + Tailwind
+- Product input form for AI analysis
+- Display of structured AI analysis results
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```
 rayeva-ai-assignment/
 
-config/
-   db.js
+backend/
+   config/
+      db.js
+   models/
+      Product.js
+   routes/
+      productRoutes.js
+      aiRoutes.js
+   server.js
 
-models/
-   Product.js
+frontend/
+   src/
+      App.jsx
+      main.jsx
+      index.css
 
-routes/
-   productRoutes.js
-   aiRoutes.js
-
-server.js
 package.json
 .gitignore
 README.md
@@ -67,7 +84,7 @@ README.md
 
 ---
 
-# Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the repository
 
@@ -78,7 +95,7 @@ cd rayeva-ai-assignment
 
 ---
 
-### 2. Install dependencies
+### 2. Install backend dependencies
 
 ```
 npm install
@@ -88,7 +105,7 @@ npm install
 
 ### 3. Create environment variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory.
 
 ```
 MONGO_URI=your_mongodb_connection_string
@@ -98,13 +115,13 @@ PORT=5000
 
 ---
 
-### 4. Start the development server
+### 4. Start backend server
 
 ```
 npm run dev
 ```
 
-Server will run on:
+Backend server will run on:
 
 ```
 http://localhost:5000
@@ -112,9 +129,37 @@ http://localhost:5000
 
 ---
 
-# API Endpoints
+## Frontend Setup
 
-## Create Product
+Navigate to the frontend folder.
+
+```
+cd frontend
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the frontend development server:
+
+```
+npm run dev
+```
+
+Frontend will run on:
+
+```
+http://localhost:5173
+```
+
+---
+
+## API Endpoints
+
+### Create Product
 
 POST `/api/products`
 
@@ -129,7 +174,7 @@ Request Body
 
 ---
 
-## Get All Products
+### Get All Products
 
 GET `/api/products`
 
@@ -137,7 +182,7 @@ Returns a list of all stored products.
 
 ---
 
-## Get Product By ID
+### Get Product By ID
 
 GET `/api/products/:id`
 
@@ -145,7 +190,7 @@ Returns a specific product from the database.
 
 ---
 
-## Update Product
+### Update Product
 
 PUT `/api/products/:id`
 
@@ -153,7 +198,7 @@ Updates product information.
 
 ---
 
-## Delete Product
+### Delete Product
 
 DELETE `/api/products/:id`
 
@@ -161,7 +206,7 @@ Deletes a product from the database.
 
 ---
 
-## AI Product Analysis
+### AI Product Analysis
 
 POST `/api/ai/analyze`
 
@@ -178,7 +223,7 @@ Request Body
 
 ---
 
-# Example AI Response
+## Example AI Response
 
 ```
 {
@@ -206,7 +251,7 @@ Request Body
 
 ---
 
-# AI Prompt Design (Concept)
+## AI Prompt Design (Concept)
 
 The AI module analyzes the product description and generates structured sustainability insights using prompt-based analysis.
 
@@ -218,15 +263,15 @@ The AI logic focuses on:
 - Tag generation
 - Impact scoring
 
-The output is structured in JSON format to integrate easily with backend systems.
+The output is structured in JSON format so it can integrate easily with backend systems.
 
 ---
 
-# Implemented Assignment Modules
+## Implemented Assignment Modules
 
-This project implements two modules from the Rayeva AI Systems Assignment.
+This project implements two modules from the **Rayeva AI Systems Assignment**.
 
-## Module 1 — AI Auto Category & Tag Generator
+### Module 1 — AI Auto Category & Tag Generator
 
 Implemented Features:
 
@@ -239,7 +284,7 @@ Implemented Features:
 
 ---
 
-## Module 3 — Impact Reporting (Simplified)
+### Module 3 — Impact Reporting (Simplified)
 
 Implemented Features:
 
@@ -249,11 +294,11 @@ Implemented Features:
 
 ---
 
-# Proposed Architecture (Not Implemented)
+## Proposed Architecture (Not Implemented)
 
-The following modules were designed conceptually but not implemented in this project.
+The following modules were conceptually designed but not implemented.
 
-## Module 2 — AI B2B Proposal Generator
+### Module 2 — AI B2B Proposal Generator
 
 Proposed capabilities:
 
@@ -264,7 +309,7 @@ Proposed capabilities:
 
 ---
 
-## Module 4 — AI WhatsApp Support Bot
+### Module 4 — AI WhatsApp Support Bot
 
 Proposed capabilities:
 
@@ -275,7 +320,7 @@ Proposed capabilities:
 
 ---
 
-# Security
+## Security
 
 - API keys are stored using environment variables
 - `.env` is excluded from GitHub via `.gitignore`
@@ -283,17 +328,40 @@ Proposed capabilities:
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 - Add authentication using JWT
 - Deploy backend to cloud (Render or Railway)
-- Build React frontend dashboard
+- Deploy frontend using Vercel
 - Integrate real AI model responses
 - Add analytics and reporting features
+- Build a dashboard for product insights
 
 ---
+# Project Screenshots
 
-# Author
+### Product Input UI
+![Product Input](screenshots/ui.png)
 
-Sushmita Singh
-Full Stack Developer (MERN Stack)
+### AI Analysis Result
+![AI Result](screenshots/result.png)
+# Live Demo
+
+Frontend Demo Video  
+https://drive.google.com/file/d/1kRnGGCTP0ioI0gVaiP0qIQholEAXMjPV/view
+
+The demo video shows:
+
+• Product input  
+• AI analysis process  
+• Structured sustainability results
+
+## Author
+
+Sushmita Singh  
+MERN Stack Developer  
+
+Passionate about building scalable web applications and AI-powered platforms that solve real-world problems.
+
+GitHub: https://github.com/sushmita-rgb
+
