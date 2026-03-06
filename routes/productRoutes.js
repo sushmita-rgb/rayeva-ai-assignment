@@ -20,16 +20,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// GET - Get All Products
-router.get("/", async (req, res) => {
-  try {
-    const products = await Product.find();
-    res.json(products);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
 router.get("/", async (req, res) => {
   try {
     const products = await Product.find().sort({ createdAt: -1 });
@@ -38,15 +28,7 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-// Get all products
-router.get("/", async (req, res) => {
-  try {
-    const products = await Product.find();
-    res.json(products);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+
 // GET product by ID
 router.get("/:id", async (req, res) => {
   try {
